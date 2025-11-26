@@ -42,7 +42,7 @@ The assignment required analyzing a dataset of our choice under the following co
 
 ## 📊 The Dataset
 
-* ![**Source:**](https://archive.ics.uci.edu/dataset/572/taiwanese+bankruptcy+prediction)
+* **Source:** [UCI Machine Learning Repository - Taiwanese Bankruptcy Prediction](https://archive.ics.uci.edu/dataset/572/taiwanese+bankruptcy+prediction)
 * **Instances:** 6,819 companies
 * **Features:** 95 financial ratios (e.g., ROA, Debt Ratio, Net Income to Assets)
 * **Target:** Binary (`1` = Bankrupt, `0` = Solvent)
