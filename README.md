@@ -92,7 +92,7 @@ The unsupervised K-Means model ($K=6$) successfully isolated risk without ever s
 
 ---
 
-## 📦 Libraries Used
+## Libraries Used
 * `pandas` & `numpy` (Data Manipulation)
 * `matplotlib` & `seaborn` (Visualization)
 * `scikit-learn` (Modeling, Scaling, Pipelines, Metrics)
