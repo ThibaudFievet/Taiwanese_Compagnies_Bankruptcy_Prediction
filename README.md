@@ -1,4 +1,4 @@
-# 📉 Taiwanese Bankruptcy Prediction Analysis
+# Taiwanese Bankruptcy Prediction Analysis
 
 **Data Mining & Machine Learning Project** *EDHEC Business School - Dual Degree in digital engineering and finance
 
@@ -6,7 +6,7 @@
 ![Scikit-Learn](https://img.shields.io/badge/Library-Scikit--Learn-orange?style=flat&logo=scikit-learn)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 
-## 📋 Project Overview
+## Project Overview
 
 This project applies macine learning techniques to predict and analyze corporate bankruptcy using the **Taiwanese Bankruptcy Prediction dataset**. The primary challenge of this analysis was dealing with a **highly imbalanced dataset**, where only 3.2% of companies were labeled as bankrupt. Each code is predede by a markdown cell that explain my thought when writing it. It has been realised as an individual assignment for my grade of Data Mining & Machine Learning course at EDHEC Business School.
 
@@ -14,13 +14,13 @@ The workflow combines **Supervised Learning** to predict risk scores and **Unsup
 
 ---
 
-## ⚠️ Disclaimer
+## Disclaimer
 
 > **Note:** As this was my very first project in Machine Learning, the primary focus was on understanding the core concepts and methodologies (discovery phase). I am aware that there is still significant room for improvement regarding code optimization, modularity, and visual presentation.
 
 ---
 
-## 🎓 Project Requirements
+## Project Requirements
 
 The assignment required analyzing a dataset of our choice under the following constraints:
 
@@ -40,7 +40,7 @@ The assignment required analyzing a dataset of our choice under the following co
   
 ---
 
-## 📊 The Dataset
+## The Dataset
 
 * **Source:** [UCI Machine Learning Repository - Taiwanese Bankruptcy Prediction](https://archive.ics.uci.edu/dataset/572/taiwanese+bankruptcy+prediction)
 * **Instances:** 6,819 companies
@@ -50,7 +50,7 @@ The assignment required analyzing a dataset of our choice under the following co
 
 ---
 
-## 🛠️ Methodology
+## Methodology
 
 ### 1. Data Cleaning & EDA
 * Removed constant columns (zero and almost zero variance) to reduce noise.
@@ -70,14 +70,14 @@ The assignment required analyzing a dataset of our choice under the following co
 
 ---
 
-## 🔑 Key Results & Findings
+## Key Results & Findings
 
-### 🏆 Classification Performance
+### Classification Performance
 The Logistic Regression model demonstrated good stability (**CV Std Dev: 0.0263**) and ranking capability:
 * **Key Metrics:** **ROC-AUC: 0.91** and **Macro F1-Score: 0.61** (a more honest metric than the biased 96% Accuracy).
 * **Conclusion:** The model is operationally conservative at the default threshold (**Recall: 0.18** / **Precision: 0.38**). The strong contrast between the high AUC and low Recall indicates that while the model correctly ranks risky companies, the decision threshold must be tuned downward to capture the majority of bankruptcy cases.
 
-### 🧩 Clustering Insights
+### Clustering Insights
 The unsupervised K-Means model ($K=6$) successfully isolated risk without ever seeing the target label:
 * **Cluster 3 ("High Risk"):** Identified a group with a **75% bankruptcy rate**. Characterized by high debt and low efficiency.
 * **Cluster 0 & 2 ("Healthy"):** Identified groups with a **0% bankruptcy rate**.
@@ -85,7 +85,7 @@ The unsupervised K-Means model ($K=6$) successfully isolated risk without ever s
 
 ---
 
-## 🚀 Future Improvements
+## Future Improvements
 * **Probability Scoring:** Use the model's probability outputs to price **Credit Default Swaps (CDS)**.
 * **Advanced Models:** Test ensemble methods like **Random Forest** or **XGBoost** to potentially improve Recall.
 * **Resampling:** Implement **SMOTE** to synthetically oversample the minority class during training.
