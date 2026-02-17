@@ -88,7 +88,7 @@ The unsupervised K-Means model ($K=6$) successfully isolated risk without ever s
 
 ---
 
-### Challenges & Learning Journey
+## Challenges & Learning Journey
 
 While the core concepts of the project were straightforward, several areas required a deeper dive and a shift in mindset:
 
