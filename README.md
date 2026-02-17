@@ -2,11 +2,12 @@
 
 **Data Mining & Machine Learning Project** *EDHEC Business School - Dual Degree in digital engineering and finance
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![Python](https://img.shields.io/badge/Language-Python-3776AB?style=flat&logo=python&logoColor=white)
 ![Scikit-Learn](https://img.shields.io/badge/Library-Scikit--Learn-orange?style=flat&logo=scikit-learn)
 ![NumPy](https://img.shields.io/badge/Library-NumPy-blue?style=flat&logo=numpy&logoColor=white)
 ![Matplotlib](https://img.shields.io/badge/Library-Matplotlib-lightgrey?style=flat&logo=matplotlib&logoColor=black)
 ![Seaborn](https://img.shields.io/badge/Library-Seaborn-blue?style=flat&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white)
 
 ## Project Overview
 
