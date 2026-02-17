@@ -5,6 +5,10 @@
 ![Python](https://img.shields.io/badge/Python-3.x-blue?style=flat&logo=python)
 ![Scikit-Learn](https://img.shields.io/badge/Library-Scikit--Learn-orange?style=flat&logo=scikit-learn)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
+![NumPy](https://img.shields.io/badge/Library-NumPy-blue?style=flat&logo=numpy&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Library-Matplotlib-lightgrey?style=flat&logo=matplotlib&logoColor=black)
+![Seaborn](https://img.shields.io/badge/Library-Seaborn-blue?style=flat&logo=python&logoColor=white)
+![Category](https://img.shields.io/badge/Category-Finance--Tool-yellow?style=flat)
 
 ## Project Overview
 
