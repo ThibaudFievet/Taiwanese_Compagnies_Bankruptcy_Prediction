@@ -5,7 +5,7 @@
 ![Python](https://img.shields.io/badge/Language-Python-3776AB?style=flat&logo=python&logoColor=white)
 ![Scikit-Learn](https://img.shields.io/badge/Library-Scikit--Learn-orange?style=flat&logo=scikit-learn)
 ![NumPy](https://img.shields.io/badge/Library-NumPy-blue?style=flat&logo=numpy&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Library-Matplotlib-ffffff?style=flat&logo=matplotlib)
+![Matplotlib](https://img.shields.io/badge/Library-Matplotlib-ffffff?style=flat&logo=python)
 ![Seaborn](https://img.shields.io/badge/Library-Seaborn-blue?style=flat&logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Library-Pandas-150458?style=flat&logo=pandas&logoColor=white)
 
