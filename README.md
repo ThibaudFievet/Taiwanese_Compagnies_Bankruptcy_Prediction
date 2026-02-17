@@ -88,14 +88,17 @@ The unsupervised K-Means model ($K=6$) successfully isolated risk without ever s
 
 ---
 
+### Challenges & Learning Journey
+
+While the core concepts of the project were straightforward, several areas required a deeper dive and a shift in mindset:
+
+* **Bridging the gap to Scikit-Learn:** Transitioning from academic Python to Machine Learning libraries was a key step. I spent significant time deconstructing new code structures and syntax within `Scikit-Learn`, as ML implementation often differs from standard procedural programming taught in introductory courses.
+* **Addressing Dataset Imbalance:** A major technical focus was handling the imbalanced nature of the dataset. I dedicated time to researching and implementing appropriate strategies to ensure the model's predictive power remained robust and wasn't biased toward the majority class.
+* **Documentation as a Priority:** A departure from my usual workflow was the extensive use of Markdown. I treated notebook annotations as a formal project report. While time-consuming, I recognized this as a "best practice" for reproducibility and clarity—a habit I intend to maintain for all future technical work.
+
+---
+
 ## Future Improvements
 * **Probability Scoring:** Use the model's probability outputs to price **Credit Default Swaps (CDS)**.
 * **Advanced Models:** Test ensemble methods like **Random Forest** or **XGBoost** to potentially improve Recall.
 * **Resampling:** Implement **SMOTE** to synthetically oversample the minority class during training.
-
----
-
-## Libraries Used
-* `pandas` & `numpy` (Data Manipulation)
-* `matplotlib` & `seaborn` (Visualization)
-* `scikit-learn` (Modeling, Scaling, Pipelines, Metrics)
