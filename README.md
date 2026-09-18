@@ -11,7 +11,7 @@
 
 ## Project Overview
 
-This project applies macine learning techniques to predict and analyze corporate bankruptcy using the **Taiwanese Bankruptcy Prediction dataset**. The primary challenge of this analysis was dealing with a **highly imbalanced dataset**, where only 3.2% of companies were labeled as bankrupt. Each code is predede by a markdown cell that explain my thought when writing it. It has been realised as an individual assignment for my grade of Data Mining & Machine Learning course at EDHEC Business School.
+This project applies macine learning techniques to predict and analyze corporate bankruptcy using a **Taiwanese Bankruptcy Prediction dataset**. The primary challenge of this analysis was dealing with a **highly imbalanced dataset**, where only 3.2% of companies were labeled as bankrupt. Each code is predede by a markdown cell that explain my thought when writing it. It has been realised as an individual assignment for my grade of Data Mining & Machine Learning course at EDHEC Business School.
 
 The workflow combines **Supervised Learning** to predict risk scores and **Unsupervised Learning** to discover hidden financial profiles within the market.
 
@@ -19,7 +19,7 @@ The workflow combines **Supervised Learning** to predict risk scores and **Unsup
 
 ## Disclaimer
 
-> **Note:** As this was my very first project in Machine Learning, the primary focus was on understanding the core concepts and methodologies (discovery phase). I am aware that there is still significant room for improvement regarding code optimization, modularity, and visual presentation.
+> **Note:** As this was my very first project in Machine Learning, the primary focus was on understanding the core concepts and methodologies. I am aware that there is still significant room for improvement regarding code optimization, modularity, and visual presentation.
 
 ---
 
@@ -101,4 +101,3 @@ While the core concepts of the project were straightforward, several areas requi
 ## Future Improvements
 * **Probability Scoring:** Use the model's probability outputs to price **Credit Default Swaps (CDS)**.
 * **Advanced Models:** Test ensemble methods like **Random Forest** or **XGBoost** to potentially improve Recall.
-* **Resampling:** Implement **SMOTE** to synthetically oversample the minority class during training.
