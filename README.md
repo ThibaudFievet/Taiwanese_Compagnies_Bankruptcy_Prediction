@@ -1,3 +1,116 @@
+*(English version below)*
+
+# Prédiction de la faillite d'entreprises taïwanaises
+
+**Projet de data mining et de machine learning - EDHEC Business School - Double diplôme en ingénierie digitale et management (majeure finance)**
+
+![Python](https://img.shields.io/badge/Language-Python-3776AB?style=flat&logo=python&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/Library-Scikit--Learn-orange?style=flat&logo=scikit-learn)
+![NumPy](https://img.shields.io/badge/Library-NumPy-blue?style=flat&logo=numpy&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Library-Matplotlib-ffffff?style=flat&logo=python)
+![Seaborn](https://img.shields.io/badge/Library-Seaborn-blue?style=flat&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Library-Pandas-150458?style=flat&logo=pandas&logoColor=white)
+
+## Présentation du projet
+
+Ce projet applique des techniques de **machine learning** afin de prédire et d'analyser la faillite d'entreprises à partir d'un **jeu de données sur les faillites d'entreprises taïwanaises**. Le principal défi de cette analyse était de traiter un **jeu de données fortement déséquilibré**, dans lequel seulement 3,2 % des entreprises étaient déclarées en faillite. Chaque partie de code est précédée d'une cellule Markdown expliquant le raisonnement suivi lors de son écriture. Ce travail a été réalisé individuellement dans le cadre du cours de Data Mining & Machine Learning à l'EDHEC Business School.
+
+La démarche combine de l'**apprentissage supervisé** pour prédire des scores de risque et de l'**apprentissage non supervisé** pour identifier des profils financiers distincts au sein du marché.
+
+---
+
+## Avertissement
+
+> **Remarque :** Comme il s'agissait de mon tout premier projet en machine learning, l'objectif principal était de comprendre les concepts et méthodologies fondamentaux. Je suis conscient que le code, sa modularité et la présentation visuelle peuvent encore être largement améliorés.
+
+---
+
+## Consignes du projet
+
+Le projet devait analyser un jeu de données choisi librement, en respectant les contraintes suivantes :
+
+* **Sélection du jeu de données :**
+    * Il devait être disponible publiquement (par exemple sur UCI ou Kaggle).
+    * **Taille minimale :** au moins 5 000 observations.
+    * **Dimensionnalité :** au moins 15 variables.
+
+* **Travaux d'analyse :**
+    * Réaliser une **analyse descriptive** complète (univariée et bivariée).
+    * Appliquer au moins **deux techniques de machine learning** parmi la classification, la régression et le clustering.
+
+* **Exigences méthodologiques :**
+    * Justifier le choix du jeu de données et des méthodes.
+    * Appliquer une **mise à l'échelle des variables** (standardisation ou normalisation) lorsque cela était pertinent.
+    * Mettre en place une **validation croisée** afin de limiter le surapprentissage.
+
+---
+
+## Le jeu de données
+
+* **Source :** [UCI Machine Learning Repository - Taiwanese Bankruptcy Prediction](https://archive.ics.uci.edu/dataset/572/taiwanese+bankruptcy+prediction)
+* **Observations :** 6 819 entreprises
+* **Variables :** 95 ratios financiers (par exemple : ROA, ratio d'endettement, résultat net sur actifs)
+* **Variable cible :** binaire (`1` = Faillite, `0` = Entreprise solvable)
+* **Déséquilibre :** 96,8 % d'entreprises solvables contre 3,2 % en faillite
+
+---
+
+## Méthodologie
+
+### 1. Nettoyage des données et analyse exploratoire
+* Suppression des colonnes constantes (variance nulle ou quasi nulle) afin de réduire le bruit.
+* Réalisation d'analyses univariées et bivariées pour identifier les principaux facteurs de risque.
+* Application de **StandardScaler** pour normaliser les 94 variables financières.
+
+### 2. Classification (apprentissage supervisé)
+* **Modèle :** régression logistique.
+* **Validation :** validation croisée stratifiée en 5 parties sur un échantillon d'entraînement représentant 80 % des données.
+* **Métrique :** optimisation de la **ROC-AUC** en raison du déséquilibre des classes, avec analyse complémentaire du score F1, du rappel et de la précision.
+* **Sélection des variables :** mise en œuvre d'une régression Lasso (L1), qui a éliminé 35 variables redondantes et identifié 58 indicateurs financiers pertinents.
+
+### 3. Clustering (apprentissage non supervisé)
+* **Algorithme :** clustering K-Means sur l'ensemble des données.
+* **Optimisation :** utilisation de la méthode du coude pour déterminer le nombre optimal de clusters ($K=6$).
+* **Profilage :** analyse des profils financiers moyens de chaque cluster afin d'identifier différents archétypes de marché (par exemple, « endettement élevé / risque élevé » contre « fonds propres élevés / situation saine »).
+
+---
+
+## Principaux résultats
+
+### Performance de la classification
+
+Le modèle de régression logistique a démontré une bonne stabilité (**écart-type en validation croisée : 0,0263**) ainsi qu'une bonne capacité de classement :
+
+* **Métriques principales :** **ROC-AUC : 0,91** et **score F1 macro : 0,61**, une métrique plus pertinente que le taux de précision biaisé de 96 %.
+* **Conclusion :** avec le seuil par défaut, le modèle est opérationnellement conservateur (**rappel : 0,18** / **précision : 0,38**). Le contraste entre une AUC élevée et un rappel faible indique que, même si le modèle classe correctement les entreprises risquées, le seuil de décision doit être abaissé pour détecter la majorité des cas de faillite.
+
+### Résultats du clustering
+
+Le modèle K-Means non supervisé ($K=6$) a réussi à isoler le risque sans jamais utiliser la variable cible :
+
+* **Cluster 3 (« risque élevé ») :** groupe présentant un **taux de faillite de 75 %**, caractérisé par un endettement élevé et une faible efficacité.
+* **Clusters 0 et 2 (« situation saine ») :** groupes présentant un **taux de faillite de 0 %**.
+* **Impact :** ces résultats montrent que la difficulté financière produit une signature distincte et mathématiquement observable, même en l'absence de données étiquetées.
+
+---
+
+## Difficultés et apprentissages
+
+Bien que les concepts fondamentaux du projet aient été accessibles, plusieurs aspects ont nécessité un approfondissement et une évolution de ma manière de travailler :
+
+* **Passage à Scikit-Learn :** la transition entre Python académique et les bibliothèques de machine learning a constitué une étape importante. J'ai consacré du temps à déconstruire de nouvelles structures de code et syntaxes, car l'implémentation du machine learning diffère de la programmation procédurale enseignée dans les cours d'introduction.
+* **Gestion du déséquilibre des données :** le déséquilibre du jeu de données a représenté un enjeu technique majeur. J'ai étudié et mis en œuvre des stratégies adaptées afin de préserver la robustesse prédictive du modèle et d'éviter un biais en faveur de la classe majoritaire.
+* **Priorité donnée à la documentation :** l'utilisation intensive de Markdown a constitué une évolution par rapport à mes habitudes. J'ai traité les annotations du notebook comme un véritable rapport de projet. Malgré le temps nécessaire, j'ai compris l'importance de cette bonne pratique pour la reproductibilité et la clarté, et je souhaite la conserver dans mes futurs travaux techniques.
+
+---
+
+## Améliorations futures
+
+* **Scoring probabiliste :** utiliser les probabilités produites par le modèle pour évaluer le prix de **Credit Default Swaps (CDS)**.
+* **Modèles avancés :** tester des méthodes d'ensemble comme **Random Forest** ou **XGBoost** afin d'améliorer potentiellement le rappel.
+
+---
+
 # Taiwanese Bankruptcy Prediction Analysis
 
 **Data Mining & Machine Learning Project - EDHEC Business School - Dual Degree in Digital ENgineering & Management (finance major)**
