@@ -1,6 +1,6 @@
 # Taiwanese Bankruptcy Prediction Analysis
 
-**Data Mining & Machine Learning Project** *EDHEC Business School - Dual Degree in digital engineering and finance
+**Data Mining & Machine Learning Project - EDHEC Business School - Dual Degree in Digital ENgineering & Management (finance major)**
 
 ![Python](https://img.shields.io/badge/Language-Python-3776AB?style=flat&logo=python&logoColor=white)
 ![Scikit-Learn](https://img.shields.io/badge/Library-Scikit--Learn-orange?style=flat&logo=scikit-learn)
